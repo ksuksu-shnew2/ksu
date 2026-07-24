@@ -12,6 +12,7 @@
 @mixin button {
 	display: block;
 	background-color: transparent;
+    padding: 0 10px;
 	border-radius: 2px;
 	border: 1px solid $dark;
 	text-align: center;
@@ -20,4 +21,5 @@
 	font-weight: 400;
 	line-height: normal;
 	text-transform: uppercase;
+    cursor: pointer;
 }
