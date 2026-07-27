@@ -23,6 +23,19 @@
 	}
 }
 
+.btn-footer {
+	@include button;
+	border: 1px solid $light;
+	border-radius: 2px;
+	width: 90px;
+	height: 40px;
+	color: $light;
+	&:disabled {
+		color: $ui-disabled;
+		border: 1px solid $ui-disabled;
+	}
+}
+
 @media screen and (min-width: 1200px) {
 	.btn-default {
 		&:hover {

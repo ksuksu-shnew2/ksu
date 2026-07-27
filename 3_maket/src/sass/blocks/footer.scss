@@ -1,0 +1,142 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    background-color: $dark;
+    margin-top: 60px;
+
+    &__form {
+        padding-top: 50px;
+    }
+
+    &__title {
+        text-align: left;
+    }
+
+    &__title-text {
+        margin-top: 40px;
+        text-align: left;
+    }
+
+    &__input {
+        margin-top: 40px;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 8px 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $ui-active;
+        width: 293px;
+        height: 0px;
+
+        font-weight: 400;
+        font-size: 14px;
+        color: $ui-active;
+         &::placeholder {
+        color: $ui-active;
+        }
+
+        &:invalid {
+		border-bottom-color: $ui-error;
+        color: $ui-error;
+	    }
+    }
+
+    &__input-error {
+            border-bottom-color: $ui-error;
+            color: $ui-error;
+
+            &::placeholder {
+                color: $ui-error;
+                }
+        }
+
+    &__check-block {
+        display: flex;
+		align-items: center;
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 200%;
+        color: $light;
+
+        a {
+            color: #a22dc6;
+            text-decoration: none;
+            margin-left: 4px;
+        }
+    }
+
+    &__checkbox {
+		margin-right: 15px;
+		width: 15px;
+		height: 15px;
+    }
+    &__btn {
+		margin-top: 20px;
+	}
+
+    &__links {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+    }
+
+    &__column {
+        // margin-top: 40px;
+        flex: 0 0 auto;
+    }
+
+    &__link {
+     margin-top: 40px;
+     list-style-type: none;
+     padding: 0;
+
+     li {
+        margin-bottom: 20px;
+     }
+     
+    }
+    &__link-text {
+        
+        font-weight: 400;
+        font-size: 16px;
+        color: $light;
+        text-decoration: none; 
+    }
+
+    &__social {
+        margin-top: 20px;
+    }
+
+    &__link-media {
+        margin-top: 40px;
+        display: flex;
+        gap:10px;
+        color: $light;
+        padding: 0;
+        
+        list-style-type: none; 
+    }
+    .icon-facebook,.icon-instagram,.icon-pinterest-circled  {
+       display: block;
+       color: $light;
+       width: 24px;
+       height: 24px; 
+       text-decoration: none;
+       &::before {
+        width: 24px;
+        height: 24px; 
+        font-size: 24px;
+        line-height: 24px;
+       }
+    }
+
+    &__text {
+        color: $light;
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 50px;
+    }
+}
