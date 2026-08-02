@@ -6,7 +6,7 @@ import viteImagemin from 'vite-plugin-imagemin';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-	base: "./",
+	base: "/ksu/",
 
     build: {
         outDir: "docs",
