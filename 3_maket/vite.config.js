@@ -6,9 +6,11 @@ import viteImagemin from 'vite-plugin-imagemin';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-	base: "/ksu/",
-	build: {
-		rollupOptions: {
+	base: "./",
+
+    build: {
+        outDir: "docs",
+        rollupOptions: {
 			input: {
 				main: resolve(__dirname, "index.html"),
                 catalog: resolve(__dirname, "catalog.html"),
