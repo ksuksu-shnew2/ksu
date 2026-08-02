@@ -9,7 +9,7 @@
     }
     &__img {
         width: 100%;
-        padding-top: 40px;
+        margin-top: 40px;
         box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
     }
     &__text {
@@ -61,6 +61,5 @@
 
 @media screen and (min-width: 1920px) {
 	.activities {
-		padding-top: 100px;
-	}
+		padding-top: 100px;}
 }
