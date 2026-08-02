@@ -1,47 +1,24 @@
-
 @use "/src/sass/base/mixins.scss" as *;
-@use "/src/sass/base/variables.scss" as *;
 
 .title-h1-italic {
 	@include title;
 	font-size: 24px;
 	font-style: italic;
-    font-weight: 400;
 }
 
+.title-h1,
 .title-h2 {
 	@include title;
 	font-size: 32px;
-	}
+}
 
 .title-h3 {
 	@include title;
 	font-size: 20px;
-	
-	}
-
-.title-footer {
-	@include title;
-	font-size: 16px;
-	color: $light;
-	
-	}
-
-.title-footer-text {
-	@include title_footer;
-	font-size: 16px;
-	color: $light;
-	
-	}
-
-.title-footer-text-2 {
-	@include title_footer;
-	font-size: 14px;
-	color: $light;
-	
-	}
+}
 
 @media screen and (min-width: 768px) {
+	.title-h1,
 	.title-h2 {
 		font-size: 36px;
 	}
@@ -51,28 +28,9 @@
 }
 
 @media screen and (min-width: 1200px) {
-	.activities {
-		padding: 60px 0 0 0;
-		&__wrapper {
-			margin-top: 80px;
-		}
-		&__col {
-			padding: 0 10px;
-		}
-		&__img {
-			margin-top: 60px;
-		}
-		&__text {
-			&_fixed {
-				width: 556px;
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 1920px) {
-	.activities {
-		padding-top: 100px;
+	.title-h1,
+	.title-h2 {
+		font-size: 40px;
 	}
 }
 
@@ -81,5 +39,3 @@
 		font-size: 32px;
 	}
 }
-	
-
