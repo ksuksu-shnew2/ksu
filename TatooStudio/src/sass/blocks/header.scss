@@ -1,0 +1,65 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.header {
+    padding-top: 10px;
+    //height: 74px;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav-list {
+        display: flex;
+        gap: 50px;
+        padding-inline: 0;
+        li {
+            list-style-type: none;
+            padding-inline: 0;
+         }
+        
+    }
+
+   
+
+    &__media {
+        display: flex;
+        justify-content: space-between;
+        gap: 240px;
+        
+    }
+
+    &__nav-social {
+        display: flex;
+        gap: 14px;
+        padding-inline: 0;
+         li {
+            list-style-type: none;
+            padding-inline: 0;
+         }
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: $White;
+        text-decoration: none;
+    }
+
+    &__logo{
+        // margin-top: 11px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: $White;
+    }
+
+     &__link-notactive {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
