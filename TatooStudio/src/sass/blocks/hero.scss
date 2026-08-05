@@ -4,16 +4,17 @@
     position: relative;
     min-height: 1080px;
     //height: 1080px;
-    background: url('../../icons/effects/Frame_noise.png') repeat,
+    background: url('../../icons/effects/Frame_noise.png') no-repeat,
     linear-gradient(135deg, rgba(236, 204, 178, 0.35) -7.42%, rgba(20, 15, 13, 0.15) 21.15%, rgba(13, 13, 15, 0.08) 42.58%, rgba(15, 18, 26, 0.12) 64.01%), 
     radial-gradient(41.67% 41.67% at 16.67% 50%, rgba(41, 31, 23, 0.12) 0%, rgba(20, 15, 13, 0.06) 45%, rgba(10, 10, 10, 0) 100%),
     $bg-main-dark;
 
     &__title {
         position: absolute;
-        top: 504px;
+        top: 536px;
         left: 0;
         margin: 0;
+        line-height: 93%;
         span {
              margin-left: 454px;
         }
@@ -25,18 +26,23 @@
     }
     &__hand-img {
             display: block;
-            width: 1032px;
-            height: 1102px;
+            // width: 1032px;
+            // height: 1102px;
             position: absolute;
-            top: -22px;
-            left: 406px;
+            top: 0;
+            // left: 406px;
+            left: 50%;
+            transform: translateX(-54%);
+            // transform: translateY(7%);
+            width: 1032px;
+            height: auto;
             
     }
 
     &__subtitle {
         position: absolute;
         width: 402px;
-        top: 436px;
+        top: 463px;
         left: 0;
         margin: 0;
     }
@@ -49,7 +55,7 @@
 
     &__content {
         position: absolute;
-        top: 506px;
+        top: 536px;
         right: 0;
         width: 401px;
     }
