@@ -34,4 +34,13 @@
     color: $Black;
 }
 
+.title-h3-cards {
+	@include title;
+	font-family: $font-h;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+
+}
+
 
