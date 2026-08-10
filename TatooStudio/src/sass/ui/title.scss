@@ -4,19 +4,34 @@
 .title-h1-anton {
 	@include title;
 	font-family: $font-h;
-    font-weight: 400;
     font-size: 180px;
     line-height: 100%;
     letter-spacing: -0.03em;
-    color: $White;
+}
+
+.title-h2-subtitle {
+	@include title;
+	font-family: $font-main;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
 }
 
 .title-h2 {
 	@include title;
-	font-family: $font-main;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: -0.02em;
-    color: $White;
+	font-family: $font-h;
+    font-size: 90px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
 }
+
+.title-h3 {
+	@include title;
+	font-family: $font-h;
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: $Black;
+}
+
+

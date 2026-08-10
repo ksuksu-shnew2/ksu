@@ -2,13 +2,15 @@
 
 .header {
     padding-top: 46px;
+    padding-left: 80px;
+    padding-right: 80px;
     position: relative;
     //height: 74px;
 
     &__nav {
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: start;
     }
     &__nav-list {
         display: flex;
@@ -52,13 +54,13 @@
     }
 
     &__logo{
-        position: absolute;
+        // position: absolute;
         top: 46px;
         left: 50%;
         transform: translateX(-50%);
         width: 134px;
         height: auto;
-        z-index: 2;
+        // z-index: 2;
         //top: 46px;
         font-weight: 400;
         font-size: 16px;

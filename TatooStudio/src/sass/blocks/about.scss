@@ -1,0 +1,246 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.about {
+    position: relative;
+    min-height: 1153px;
+    //height: 1080px;
+    background: url('../../icons/effects/Frame_noise_wight.png') no-repeat,
+    linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &__content-left {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__stroke-img {
+        position: absolute;
+        top: 150px;
+        left: -69px; 
+    
+    }
+    &__title {
+        position: absolute;
+        top: 177px;
+        left: 0; 
+        z-index: 1;
+    }
+
+    &__subtitle {
+        position: absolute;
+        top: 296px;
+        left: 0; 
+    }
+
+    &__grid-container {
+        position: absolute;
+        top: 600px;
+        left: 0;
+    }
+
+
+    &__grid-text {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(2, 244px);
+        height: 41px;
+        justify-self: start;
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+         border-bottom: 1px solid $Black;
+        color: $Black;
+            
+        }
+    
+    &__grid-text:first-child::before  {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid $Black;}
+
+    &__grid-text > :nth-child(odd) {
+        justify-self: start;
+            margin-top: 11px;
+                // align-self: center;
+            }
+
+    &__grid-text  > :nth-child(even) {
+            justify-self: end;
+            margin-top: 13px;
+            // align-self: center;
+        }
+
+    &__content-right {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        position: absolute;
+        width: 402px;
+        display: flex;
+        flex-wrap: wrap;
+        top: 168px;
+        right: 0;
+        gap: 320px;
+    }
+
+    &__text {
+        margin-top: 14px;
+        letter-spacing: -0.03em;
+        color: $Black;
+    }
+    &__subtext {
+        position: absolute;
+        top: 984px;
+        right: 0; 
+        letter-spacing: -0.02em;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    &__collge-picture {
+        position: relative;
+        width: 667px;
+        height: 752px;
+        left: 50%;
+        transform: translateX(-38%);
+        top: 162px;
+        z-index: 1;
+        // left: 702px;
+    }
+
+    &__card3 {
+        position: absolute;
+        width: 478px;
+        height: 515px;
+        left: 50px;
+        
+    }
+
+    &__card3-frame{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+  
+    }
+
+    &__frame3-img{
+        position: absolute;
+        top: 23px;
+        left: 15.36px;
+    }
+
+     &__card3-img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &__card2 {
+        position: absolute;
+        width: 534px;
+        height: 576px;
+        top: 100px;
+        left: 135px;
+        
+    }
+
+    &__card2-frame {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__card2_1-frame {
+        position: absolute;
+        width: 502px;
+        height: 541px;
+        // padding: 29px 17px 6px 15px;
+        top: 29px;
+        left: 17px;
+    }
+
+    &__card2-img {
+        position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // padding: 29px 17px 6px 15px;
+        top: 29px;
+        left: 17px;
+        z-index: 2;
+        background: $Gray-400;
+        // object-fit: cover;
+        // top: 291px;
+        // left: 852px;
+    }
+
+     &__card1 {
+        position: absolute;
+        width: 570px;
+        height: 631px;
+        top: 200px;
+        left: 0px;
+        z-index: 3;
+    }
+    &__card1-smile {
+        position: absolute;
+        // width: 113px;
+        // height: 119px;
+        bottom: 29px;
+        left: 124px;
+        z-index: 4;
+    }
+
+     &__card1-text1 {
+        position: absolute;
+        // width: 210px;
+        // height: 160px;
+        bottom: 29px;
+        left: 320px;
+        z-index: 5;
+    }
+
+     &__card1-text2 {
+        position: absolute;
+        // width: 202px;
+        // height: 186px;
+        bottom: 5px;
+        left: 455px;
+        z-index: 4;
+    }
+
+    &__card1-img {
+        position: absolute;
+        // width: 457px;
+        // height: 392px;
+        bottom: 153px;
+        left: 19px;
+        z-index: 4;
+    }
+    &__card4-img1 {
+        position: absolute;
+        top: 351px;
+        left: 615px;
+        z-index: 4;
+
+    }
+
+    &__card4-img2 {
+        position: absolute;
+        top: 152px;
+        left: 1225px;
+        // z-index: 1;
+
+    }
+
+     &__card4-img3 {
+        position: absolute;
+        top: 808px;
+        left: 1212px;
+        // z-index: ;
+
+    }
+}

@@ -1,0 +1,12 @@
+@keyframes fototrack {
+    0% {
+		transform: translateX(-24px);
+		// opacity: 0;
+	}
+
+	100% {
+        transform: translateX(-2068px);
+		// transform: translateX(-2044px);
+		// opacity: 1;
+	}
+}

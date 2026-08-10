@@ -8,3 +8,11 @@
     background: $White;
 	color: $Black
 }
+
+.btn-works {
+	@include button;
+	width: 402px;
+    height: 66px;
+    background: $Black;
+	color: $White;
+}
