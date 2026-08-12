@@ -13,54 +13,69 @@
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translateX(-54%);
+        transform: translateX(-55%);
         width: 836px;
         height: 1080px;
     }
-    &__content {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    &__stroke-img {
-        position: absolute;
-        top: 150px;
-        left: -54px; 
-    
-    }
+        &__wrapper {
+            padding-top: 150px;
+            //padding-left: 18px;
+        }
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 402px;
+            //padding-left: 18px;
+        }
+
+
     &__title {
-        position: absolute;
-        top: 170px;
-        left: 11px; 
-        z-index: 1;
+         position: relative;
+         z-index: 1;
+         padding-top: 11px;
+         padding-left: 15px;
+         width: fit-content;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            top: -10px;
+            bottom: -22px;
+            left: -57px;
+            right: -73px;
+            background: url("/src/img/works/stroke.png") center / 100% 100% no-repeat;
+
+    }
     }
 
     &__subtitle {
-        position: absolute;
-        top: 292px;
-        left: 0; 
+       
+        margin-top: 22px;
+    
     }
 
     &__content-btn {
-        position: absolute;
-        top: 401px;
-        right: 0; 
+        margin-top: 142px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
         width: 402px;
+
     }
 
     &__text {
-        position: absolute;
-        top: -109px;
-        right: 0; 
-        width: 402px;
+
         letter-spacing: -0.03em;
         color: $Black;
     }
 
     &__subtext {
-        position: absolute;
-        top: 96px;
-        right: 0; 
+        
+        margin-top: 16px;
+        text-align: end;
         letter-spacing: -0.02em;
         color: rgba(0, 0, 0, 0.6);
     }
@@ -75,7 +90,7 @@
         
         display: flex;
         gap: 17px;
-        margin-top: 555px;
+        margin-top: 39px;
         //margin-left: -24px;
        
 		animation-name: fototrack;
