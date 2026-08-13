@@ -1,7 +1,7 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .header {
-    padding-top: 46px;
+    padding-top: 45px;
     padding-left: 80px;
     padding-right: 80px;
     position: relative;
@@ -34,7 +34,7 @@
 
     &__nav-social {
         display: flex;
-        gap: 14px;
+        gap: 15px;
         padding-inline: 0;
          li {
             list-style-type: none;
@@ -55,9 +55,9 @@
 
     &__logo{
         // position: absolute;
-        top: 46px;
-        left: 50%;
-        transform: translateX(-50%);
+        //top: 46px;
+        // left: 50%;
+        // transform: translateX(-50%);
         width: 134px;
         height: auto;
         // z-index: 2;

@@ -19,19 +19,19 @@
     &__content-left {
         display: flex;
         flex-direction: column;
-        margin-top: 356px;
-        row-gap: 32px;
+        margin-top: 355px;
+        row-gap: 30px;
     }
 
    
     &__title {
         position: relative;
         line-height: 93%;
-        padding-top: 15px;
+        // padding-top: 15px;
         span {
           display: block;
           padding-top: 15px;
-          padding-left: 454px;
+          padding-left: 455px;
         }
         z-index: 4;
     }
@@ -39,7 +39,7 @@
    
 
     &__content-right {
-        margin-top: 426px;
+        margin-top: 425px;
         margin-left: auto;
     }
 
@@ -49,11 +49,8 @@
 
     &__content-block {
         display: flex;
-        // margin-top: 426px;
-        max-width: 402px;
+        max-width: 401px;
         flex-direction: column;
-
-        // margin-top: 141px;
         h2 {
             letter-spacing: -0.03em;
         }
@@ -69,13 +66,13 @@
     &__content-btn{
         display: flex;
         flex-direction: column;
-        margin-top: 141px;
-        row-gap: 14px;
+        margin-top: 140px;
+        row-gap: 15px;
     }
 
     &__content-text {
         // padding-bottom: 40px;
-        margin-top: 99px;
+        margin-top: 100px;
         text-align: end;
         color: rgba(255, 255, 255, 0.6);
         
