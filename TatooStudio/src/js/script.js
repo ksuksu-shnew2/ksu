@@ -14,3 +14,71 @@ cards.forEach((card) => {
         card.classList.toggle("is-active");
     });
 });
+
+const rows = document.querySelectorAll(".service__grid-container");
+const img = document.querySelector(".service__img");
+const table = document.querySelector(".service__table");
+const imgWrapper = document.querySelector(".service__wrapper-img");
+
+const images = [
+    "/src/img/service/girl.jpg",
+    "/src/img/service/2.png",
+    "/src/img/service/3.png",
+    "/src/img/service/4.png",
+    "/src/img/service/5.png"
+];
+
+let currentImage = "";
+
+rows.forEach((row) => {
+    row.addEventListener("mouseenter", () => {
+
+        // Убираем активный класс у всех строк
+        rows.forEach((item) => {
+            item.classList.remove("service__grid-container_active");
+        });
+
+        // Подсвечиваем текущую строку
+        row.classList.add("service__grid-container_active");
+
+
+        // Выбираем случайную картинку
+        let randomImage;
+
+        do {
+            const random = Math.floor(Math.random() * images.length);
+            randomImage = images[random];
+        } while (randomImage === currentImage);
+
+        currentImage = randomImage;
+
+
+        // Убираем прошлую анимацию
+        imgWrapper.classList.remove("service__wrapper-img_active");
+
+        // Меняем картинку
+        img.src = randomImage;
+
+        // Перезапускаем анимацию
+        void imgWrapper.offsetWidth;
+
+        // Запускаем анимацию фото + банта вместе
+        imgWrapper.classList.add("service__wrapper-img_active");
+    });
+
+    // row.addEventListener("mouseleave", () => {
+    //     row.classList.remove("service__grid-container_active");
+
+    //     imgWrapper.classList.remove("service__img-wrapper_active");
+    // });
+
+});
+
+// Ушли полностью с таблицы
+table.addEventListener("mouseleave", () => {
+    imgWrapper.classList.remove("service__wrapper-img_active");
+
+    rows.forEach((item) => {
+        item.classList.remove("service__grid-container_active");
+    });
+});
