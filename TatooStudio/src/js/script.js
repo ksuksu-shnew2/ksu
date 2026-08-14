@@ -15,6 +15,7 @@ cards.forEach((card) => {
     });
 });
 
+
 const rows = document.querySelectorAll(".service__grid-container");
 const img = document.querySelector(".service__img");
 const table = document.querySelector(".service__table");

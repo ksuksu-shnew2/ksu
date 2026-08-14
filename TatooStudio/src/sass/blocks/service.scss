@@ -48,8 +48,8 @@
 
         &_active {
         span:not(:empty) {
-            background-color: #f1dada;
-            color: #000;
+            background-color: $Gray-300;
+            color: $Black;
         }
 
         span {
@@ -65,7 +65,6 @@
 
         position: relative;
         width: fit-content;
-        // margin: 0 auto;
         margin-top: -470px;
         margin-left: 670px;
         opacity: 0;
@@ -82,8 +81,6 @@
 		content: "";
 		display: block;
 		position: absolute;
-		// left: 350px;
-		// top: -500px;
         left: 350px;
 		top: -40px;
 		width: 119px;
@@ -96,32 +93,10 @@
 
     &__img {
         display: block;
-        // position: absolute;
-        // top: 0;
-        // left: 670px;
-        // padding-top: 334px;
-        // padding-left: 750px;
+       
         width: 420px;
         height: 563px;
-        // z-index: 1;
-
-        //  object-fit: cover;
-
-        // opacity: 0;
-        // transform: scale(1);
-
-        
-
-        // &::before {
-		// content: "";
-		// display: block;
-		// position: absolute;
-		// left: 350px;
-		// top: -30px;
-		// width: 119px;
-		// height: 109px;
-		// background: url("/src/img/service/bow.png") center center / cover no-repeat;}
-        // z-index: 2;
+       
     }
 
 

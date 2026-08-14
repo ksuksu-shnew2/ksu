@@ -23,6 +23,9 @@
         grid-template-columns: repeat(3, 555px);
         column-gap: 45px; 
 
+        // &_animated {
+        // animation: slideIn 5s ease;
+        // }
         animation-name: slideIn;
 		animation-duration: 5s;
 		animation-iteration-count: 1;
