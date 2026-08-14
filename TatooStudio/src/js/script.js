@@ -20,12 +20,23 @@ const img = document.querySelector(".service__img");
 const table = document.querySelector(".service__table");
 const imgWrapper = document.querySelector(".service__wrapper-img");
 
+import photo1 from "/src/img/service/girl.jpg";
+import photo2 from "/src/img/service/2.png";
+import photo3 from "/src/img/service/3.png";
+import photo4 from "/src/img/service/4.png";
+import photo5 from "/src/img/service/5.png";
+
 const images = [
-    "/src/img/service/girl.jpg",
-    "/src/img/service/2.png",
-    "/src/img/service/3.png",
-    "/src/img/service/4.png",
-    "/src/img/service/5.png"
+    photo1,
+    photo2,
+    photo3,
+    photo4,
+    photo5
+    // "/src/img/service/girl.jpg",
+    // "/src/img/service/2.png",
+    // "/src/img/service/3.png",
+    // "/src/img/service/4.png",
+    // "/src/img/service/5.png"
 ];
 
 let currentImage = "";
@@ -65,12 +76,6 @@ rows.forEach((row) => {
         // Запускаем анимацию фото + банта вместе
         imgWrapper.classList.add("service__wrapper-img_active");
     });
-
-    // row.addEventListener("mouseleave", () => {
-    //     row.classList.remove("service__grid-container_active");
-
-    //     imgWrapper.classList.remove("service__img-wrapper_active");
-    // });
 
 });
 
