@@ -1,5 +1,6 @@
 import "../sass/style.scss";
 
+
 const cards = document.querySelectorAll(".about__animation");
 
 cards.forEach((card) => {
@@ -88,3 +89,14 @@ table.addEventListener("mouseleave", () => {
         item.classList.remove("service__grid-container_active");
     });
 });
+
+ var swiper = new Swiper('.mySwiper', {
+        direction: 'vertical',
+        slidesPerView: 1.001,
+        spaceBetween: 40,
+        loop: true,
+        navigation: {
+        nextEl: ".masters__arrow--next",
+        prevEl: ".masters__arrow--prev",
+         },
+      });
