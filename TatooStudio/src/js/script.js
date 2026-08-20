@@ -90,55 +90,24 @@ table.addEventListener("mouseleave", () => {
     });
 });
 
- var swiper = new Swiper('.mySwiper', {
-    direction: 'vertical',
+ var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
     slidesPerView: 1.001,
     spaceBetween: 40,
-    loop: true,
-    speed: 800,
+    speed: 700,
+    loop: false,
 
-    navigation: {
-        nextEl: ".masters__arrow--next",
-        prevEl: ".masters__arrow--prev",
+    mousewheel: {
+        enabled: true,
+        forceToAxis: true,
+        releaseOnEdges: true,
+        thresholdDelta: 20,
+        thresholdTime: 500,
+        sensitivity: 1,
     },
+
+    // navigation: {
+    //     nextEl: ".masters__arrow--next",
+    //     prevEl: ".masters__arrow--prev",
+    // },
 });
-
-const masters = document.querySelector(".masters");
-
-let wheelLocked = false;
-
-masters.addEventListener("wheel", (e) => {
-    const goingDown = e.deltaY > 0;
-    const goingUp = e.deltaY < 0;
-
-    const isFirst = swiper.realIndex === 0;
-    const isLast = swiper.realIndex === swiper.slides.length - 1;
-
-    // На первой карточке разрешаем странице идти вверх
-    if (goingUp && isFirst) {
-        return;
-    }
-
-    // На последней карточке разрешаем странице идти вниз
-    if (goingDown && isLast) {
-        return;
-    }
-
-    // Пока есть куда листать карточки — страницу блокируем
-    e.preventDefault();
-
-    if (wheelLocked) return;
-    if (Math.abs(e.deltaY) < 40) return;
-
-    wheelLocked = true;
-
-    if (goingDown) {
-        swiper.slideNext();
-    } else if (goingUp) {
-        swiper.slidePrev();
-    }
-
-    setTimeout(() => {
-        wheelLocked = false;
-    }, 850);
-}, { passive: false });

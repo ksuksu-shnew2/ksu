@@ -8,15 +8,11 @@
     linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    // cursor: grab;
+    cursor: grab;
 
     &:active {
     cursor: grabbing;
     }
-
-    // &__wrapper {
-    //     padding-top: 150px;
-    // }
 
     &__grid-container {
         margin-top: 150px;
@@ -248,40 +244,41 @@
         }
 
         &__content-text{
-        margin-top: 30px;
+        // position: absolute;
+        margin-top: -40px;
         text-align: end;
         color: rgba(149, 149, 149, 0.6);
 
     }
 
-    &__arrow {
-        display: flex;
-        justify-content: space-between;
-        margin-top:-120px;
-    }
-    &__arrow--next {
-        display: block;
+    // &__arrow {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     margin-top:-120px;
+    // }
+    // &__arrow--next {
+    //     display: block;
         
-        margin-right: 10px;
-        padding: 9px 19px;
-        text-align: end;
-        border: 1px solid $White;
-        border-radius: 99px;
-        width: 87px;
-        height: 39px;
-        transform: rotate(-180deg);
-         background: transparent;
-    }
+    //     margin-right: 10px;
+    //     padding: 9px 19px;
+    //     text-align: end;
+    //     border: 1px solid $White;
+    //     border-radius: 99px;
+    //     width: 87px;
+    //     height: 39px;
+    //     transform: rotate(-180deg);
+    //      background: transparent;
+    // }
 
-    &__arrow--prev{
-        display: block;
-        padding: 9px 19px;
-        // margin-top:-90px;
-        margin-left: 10px;
-        border: 1px solid $White;
-        border-radius: 99px;
-        width: 87px;
-        height: 39px;
-         background: transparent;
-    }
+    // &__arrow--prev{
+    //     display: block;
+    //     padding: 9px 19px;
+    //     // margin-top:-90px;
+    //     margin-left: 10px;
+    //     border: 1px solid $White;
+    //     border-radius: 99px;
+    //     width: 87px;
+    //     height: 39px;
+    //      background: transparent;
+    // }
 }
