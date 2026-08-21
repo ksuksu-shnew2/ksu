@@ -111,3 +111,60 @@ table.addEventListener("mouseleave", () => {
     //     prevEl: ".masters__arrow--prev",
     // },
 });
+
+const hearts = document.querySelectorAll(".masters__heart");
+
+hearts.forEach((heart) => {
+    heart.addEventListener("click", () => {
+        const isActive =
+            heart.classList.toggle("masters__heart_active");
+
+        if (!isActive) return;
+
+        const particleCount = 24;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle =
+                document.createElement("span");
+
+            particle.classList.add("masters__particle");
+
+            const size =
+                2 + Math.random() * 5;
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            const angle =
+                (Math.PI * 2 / particleCount) * i;
+
+            // Было примерно 30–70
+            // Теперь разлёт гораздо шире
+            const distance =
+                70 + Math.random() * 90;
+
+            const x =
+                Math.cos(angle) * distance;
+
+            const y =
+                Math.sin(angle) * distance;
+
+            particle.style.setProperty(
+                "--x",
+                `${x}px`
+            );
+
+            particle.style.setProperty(
+                "--y",
+                `${y}px`
+            );
+
+            heart.appendChild(particle);
+
+            particle.addEventListener(
+                "animationend",
+                () => particle.remove()
+            );
+        }
+    });
+});
