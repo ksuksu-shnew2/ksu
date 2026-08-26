@@ -4,8 +4,57 @@
     position: relative;
     min-height: 1080px;
     //height: 1080px;
-    background: url('../../icons/effects/Frame_noise.png') no-repeat,
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        // width: 60%;
+        z-index: 0;
+    }
+    &::before {
+        left: 0;
+
+         background: url('../../icons/effects/Frame_noise_wight.png') no-repeat,
+            linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
+        
+            }
+    &::after {
+        right: 0;
+        width: 936px;
+        height: 1081px;
+        background: url('../../icons/effects/Frame_noise.png') no-repeat,
     linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
-    // border-top: 1px solid rgba(255, 255, 255, 0.1);
-    // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    &__wrapper {
+            padding-top: 150px;
+            //padding-left: 18px;
+        }
+
+     &__title {
+         position: relative;
+         z-index: 1;
+         padding-top: 10px;
+         width: fit-content;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            top: -16px;
+            bottom: -23px;
+            left: -69px;
+            right: -98px;
+            background: url("/src/img/forms/stroke.png") center / 100% 100% no-repeat;
+
+    }
+    }
+
+    &__subtitle {
+        margin-top: 25px;
+    }
+   
 }

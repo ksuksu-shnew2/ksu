@@ -1,24 +1,43 @@
 @use "/src/sass/base/variables.scss" as *;
 
-.masters {
+.masters-scroll {
     position: relative;
+    // min-height: 1080px;
+    // height: 300vh; // подберите под кол-во слайдов, см. ниже
+    // overflow: hidden;
+}
+.masters {
+    
+    // position: sticky;
+    // top: 0;
+    // height: 100vh;
+    // overflow: hidden;
+    // display: flex;
+    // align-items: center;
+
+    position: relative;
+    // height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    
+
+    // position: relative;
     min-height: 1080px;
     //height: 1080px;
     background: url('../../icons/effects/Frame_noise.png') no-repeat,
     linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    cursor: grab;
+    // overflow: hidden;
 
-    &:active {
-    cursor: grabbing;
-    }
 
     &__grid-container {
         margin-top: 150px;
         display: grid;
         grid-template-columns: 680px 1fr 180px;
         gap: 70px;
+  
     }
 
     &__title {
@@ -97,18 +116,45 @@
 
     &__infomaster{
         padding-left: 30px;
+        // overflow: hidden;
+    }
+    &__track {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
 
     &__fotoslider {
     position: relative;
     margin-top: -150px;
-    top: -40px;
+    top: -80px;
     left: 20px;
     width: 671px;
+    height: 996px;
+
+    scrollbar-width: none;
+
+    // overflow: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+   
+    }
+
+    &__slide {
+
+    position: relative;
+
+    flex: 0 0 996px;
+
+    width: 100%;
     height: 996px;
     }
 
     .swiper {
+       
+        // overflow: hidden; 
         // position: relative;
         // overflow: hidden;
         width: 100%;
@@ -129,6 +175,7 @@
             padding: 40px 40px 120px;
             width: 100%;
             height: 100%;
+            box-sizing: border-box;
             // width: 591px;
             // height: 836px;
             transform: rotate(5deg);
@@ -141,9 +188,9 @@
                 height: 2px;
                 background: linear-gradient(
                         to right,
-                        rgba(255, 255, 255, 0.8) 0%,
-                        rgba(255, 255, 255, 0.8) 30%,
-                        rgba(255, 255, 255, 0.2) 30%,
+                        rgba(255, 255, 255, 1) 0%,
+                        rgba(255, 255, 255, 1) 33%,
+                        rgba(255, 255, 255, 0.2) 33%,
                         rgba(255, 255, 255, 0.2) 100%
                     );
                 z-index: 2;
@@ -305,8 +352,11 @@
 
         &__content-text{
         // position: absolute;
-        margin-top: -40px;
+        margin-top: -80px;
         text-align: end;
+        // bottom: 40px;   // фиксированный угол экрана
+        // left: 40px;    // или left, как в дизайне
+        // margin-top: 0;
         color: rgba(149, 149, 149, 0.6);
 
     }

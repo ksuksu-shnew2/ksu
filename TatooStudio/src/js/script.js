@@ -90,81 +90,191 @@ table.addEventListener("mouseleave", () => {
     });
 });
 
- var swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    slidesPerView: 1.001,
-    spaceBetween: 40,
-    speed: 700,
-    loop: false,
+//  var swiper = new Swiper(".mySwiper", {
+//     direction: "vertical",
+//     slidesPerView: 1.001,
+//     spaceBetween: 40,
+//     speed: 700,
+//     loop: false,
 
-    mousewheel: {
-        enabled: true,
-        forceToAxis: true,
-        releaseOnEdges: true,
-        thresholdDelta: 20,
-        thresholdTime: 500,
-        sensitivity: 1,
-    },
+//     mousewheel: {
+//         enabled: true,
+//         forceToAxis: true,
+//         releaseOnEdges: true,
+//         thresholdDelta: 20,
+//         thresholdTime: 500,
+//         sensitivity: 1,
+//     },
 
-    // navigation: {
-    //     nextEl: ".masters__arrow--next",
-    //     prevEl: ".masters__arrow--prev",
-    // },
-});
+//     // navigation: {
+//     //     nextEl: ".masters__arrow--next",
+//     //     prevEl: ".masters__arrow--prev",
+//     // },
+// });
 
-const hearts = document.querySelectorAll(".masters__heart");
+gsap.registerPlugin(ScrollTrigger);
 
-hearts.forEach((heart) => {
-    heart.addEventListener("click", () => {
-        const isActive =
-            heart.classList.toggle("masters__heart_active");
+function initMastersSlider() {
+    const section = document.querySelector(".masters");
 
-        if (!isActive) return;
+    const slider = document.querySelector(
+        ".masters__fotoslider"
+    );
 
-        const particleCount = 24;
+    const track = document.querySelector(
+        ".masters__track"
+    );
 
-        for (let i = 0; i < particleCount; i++) {
-            const particle =
-                document.createElement("span");
+    if (!section || !slider || !track) return;
 
-            particle.classList.add("masters__particle");
 
-            const size =
-                2 + Math.random() * 5;
+    // Возвращаем ленту в начало
+    gsap.set(track, {
+        y: 0
+    });
 
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
 
-            const angle =
-                (Math.PI * 2 / particleCount) * i;
+    // Насколько лента должна подняться вверх
+    function getScrollDistance() {
+        return Math.max(
+            0,
+            track.scrollHeight - slider.clientHeight
+        );
+    }
 
-            // Было примерно 30–70
-            // Теперь разлёт гораздо шире
-            const distance =
-                70 + Math.random() * 90;
 
-            const x =
-                Math.cos(angle) * distance;
+    gsap.to(track, {
+        y: () => -getScrollDistance(),
 
-            const y =
-                Math.sin(angle) * distance;
+        ease: "none",
 
-            particle.style.setProperty(
-                "--x",
-                `${x}px`
-            );
+        scrollTrigger: {
+            trigger: section,
 
-            particle.style.setProperty(
-                "--y",
-                `${y}px`
-            );
+            start: "top top",
 
-            heart.appendChild(particle);
+            // Длина прокрутки равна длине ленты
+            end: () => {
+                return `+=${Math.max(
+                    1,
+                    getScrollDistance()
+                )}`;
+            },
 
-            particle.addEventListener(
-                "animationend",
-                () => particle.remove()
-            );
+            scrub: 1,
+
+            pin: true,
+
+            pinSpacing: true,
+
+            anticipatePin: 1,
+
+            invalidateOnRefresh: true,
+
+            // markers: true
         }
     });
+}
+
+
+// ==========================
+// ЛАЙК + ЧАСТИЦЫ
+// ==========================
+function initHearts() {
+    const hearts = document.querySelectorAll(".masters__heart");
+
+    hearts.forEach((heart) => {
+        heart.addEventListener("click", () => {
+            const isActive = heart.classList.toggle("masters__heart_active");
+            if (!isActive) return;
+
+            const particleCount = 24;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement("span");
+                particle.classList.add("masters__particle");
+
+                const size = 2 + Math.random() * 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                const angle = ((Math.PI * 2) / particleCount) * i;
+                const distance = 70 + Math.random() * 90;
+
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+
+                particle.style.setProperty("--x", `${x}px`);
+                particle.style.setProperty("--y", `${y}px`);
+
+                heart.appendChild(particle);
+
+                particle.addEventListener("animationend", () => particle.remove());
+            }
+        });
+    });
+}
+
+initMastersSlider();
+initHearts();
+
+window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
 });
+
+// const hearts = document.querySelectorAll(".masters__heart");
+
+// hearts.forEach((heart) => {
+//     heart.addEventListener("click", () => {
+//         const isActive =
+//             heart.classList.toggle("masters__heart_active");
+
+//         if (!isActive) return;
+
+//         const particleCount = 24;
+
+//         for (let i = 0; i < particleCount; i++) {
+//             const particle =
+//                 document.createElement("span");
+
+//             particle.classList.add("masters__particle");
+
+//             const size =
+//                 2 + Math.random() * 5;
+
+//             particle.style.width = `${size}px`;
+//             particle.style.height = `${size}px`;
+
+//             const angle =
+//                 (Math.PI * 2 / particleCount) * i;
+
+//             // Было примерно 30–70
+//             // Теперь разлёт гораздо шире
+//             const distance =
+//                 70 + Math.random() * 90;
+
+//             const x =
+//                 Math.cos(angle) * distance;
+
+//             const y =
+//                 Math.sin(angle) * distance;
+
+//             particle.style.setProperty(
+//                 "--x",
+//                 `${x}px`
+//             );
+
+//             particle.style.setProperty(
+//                 "--y",
+//                 `${y}px`
+//             );
+
+//             heart.appendChild(particle);
+
+//             particle.addEventListener(
+//                 "animationend",
+//                 () => particle.remove()
+//             );
+//         }
+//     });
+// });

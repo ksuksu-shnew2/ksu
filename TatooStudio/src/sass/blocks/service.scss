@@ -20,7 +20,7 @@
         display: grid;
         grid-template-columns: 330px 290px 1fr 400px;
         gap: 24px;
-        height: 40px;
+        height: 43px;
         width: 1760px;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -34,7 +34,7 @@
         display: grid;
         grid-template-columns: 330px 290px 1fr 400px;
         gap: 24px;
-        height: 40px;
+        height: 43px;
         width: 1760px;
      
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -66,7 +66,7 @@
 
         position: relative;
         width: fit-content;
-        margin-top: -470px;
+        margin-top: -505px;
         margin-left: 670px;
         opacity: 0;
         transform-origin: center center;
@@ -101,7 +101,7 @@
     }
 
     &__content-text{
-        margin-top: 125px;
+        margin-top: 120px;
         text-align: end;
         color: rgba(149, 149, 149, 0.6);
 

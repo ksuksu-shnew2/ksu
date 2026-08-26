@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   </head>
   <body>
    <section class="hero">
@@ -269,7 +271,7 @@
    </section>
    <section class="service">
     <div class="container">
-        <h2 class="title-h2 service__title">WORK PROCESS</h2>
+        <h2 class="title-h2 service__title">SERVICE INDEX</h2>
         <div class="service__table">
             <div class="title-h2-subtitle service__grid-container--title">
                 <span>SERVICE</span>
@@ -358,6 +360,7 @@
         <p class="title-h2-subtitle service__content-text">PROJECT NOTES / 03</p>
     </div>
    </section>
+   <div class="masters-scroll">
    <section class="masters">
             <div class="container">
                 <div class="masters__wrapper">
@@ -374,9 +377,12 @@
                             <h2 class="title-h2-subtitle masters__text-subtitle">Discuss placement, scale, details and availability.</h2> 
                         </div>
                         <div class="masters__fotoslider">
-                                <div class="swiper mySwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                <!-- <div class="swiper mySwiper">
+                                   
+                                        <div class="swiper-slide"> -->
+                                     <!-- <div class="swiper-wrapper"> -->
+                                    <div class="masters__track">
+                                        <div class="masters__slide" data-index="0">
                                             <div class="masters__card">
                                                 <img class="masters__foto" src="/src/img/masters/master.png" alt="master1">
                                             </div>
@@ -392,8 +398,8 @@
                                                 <span class="masters__book-title">Book an appointment with Sandra Varo</span>
                                                 <!-- <img src="/src/img/masters/vector1.png" alt="" class="masters__heart"> -->
                                                  <button class="masters__heart" type="button" aria-label="Like">
-                                                    <svg viewBox="0 0 24 24">
-                                                        <path d="M20.8 4.6c-1.5-1.5-4-1.5-5.5 0L12 7.9 8.7 4.6a3.9 3.9 0 0 0-5.5 5.5L12 19l8.8-8.9a3.9 3.9 0 0 0 0-5.5z"/>
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.38202 10.1753C3.48307 9.02055 3.93202 7.92361 4.66957 7.02936C5.40713 6.13512 6.3986 5.48564 7.51302 5.1667C8.62745 4.84776 9.81241 4.87437 10.9114 5.24301C12.0104 5.61166 12.9717 6.30499 13.6684 7.23145C13.7176 7.29433 13.7793 7.34642 13.8495 7.38448C13.9198 7.42255 13.9971 7.44579 14.0767 7.45275C14.1562 7.45972 14.2364 7.45026 14.3122 7.42496C14.388 7.39967 14.4578 7.35908 14.5172 7.30571C15.3622 6.50851 16.43 5.98758 17.5784 5.81225C18.7268 5.63691 19.9014 5.8155 20.9458 6.32423C21.9902 6.83296 22.8549 7.6477 23.4248 8.66003C23.9948 9.67235 24.2428 10.8342 24.1361 11.991C23.9282 14.3674 22.2164 16.0057 20.5236 17.426L14.3422 22.4408C14.1294 22.6459 13.8754 22.8035 13.5971 22.9029C13.3187 23.0023 13.0224 23.0414 12.7278 23.0175C12.4332 22.9936 12.147 22.9073 11.8883 22.7643C11.6296 22.6213 11.4043 22.4249 11.2274 22.1881L5.99579 16.155C4.57542 14.4623 3.17321 12.562 3.38202 10.1753Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
 
                                                     <span class="masters__particles"></span>
@@ -401,7 +407,8 @@
                                             </div>
                                             <img src="/src/img/masters/grafiti.png" alt="" class="masters__grafiti">
                                         </div>
-                                        <div class="swiper-slide">
+                                        <!-- <div class="swiper-slide"> -->
+                                        <div class="masters__slide" data-index="1">
                                             <div class="masters__card">
                                                 <img class="masters__foto" src="/src/img/masters/master2.jpg" alt="master2">
                                             </div>
@@ -417,8 +424,8 @@
                                                 <span class="masters__book-title">Book an appointment with Alex Smith</span>
                                                 <!-- <img src="/src/img/masters/vector1.png" alt="" class="masters__heart"> -->
                                                  <button class="masters__heart" type="button" aria-label="Like">
-                                                    <svg viewBox="0 0 24 24">
-                                                        <path d="M20.8 4.6c-1.5-1.5-4-1.5-5.5 0L12 7.9 8.7 4.6a3.9 3.9 0 0 0-5.5 5.5L12 19l8.8-8.9a3.9 3.9 0 0 0 0-5.5z"/>
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.38202 10.1753C3.48307 9.02055 3.93202 7.92361 4.66957 7.02936C5.40713 6.13512 6.3986 5.48564 7.51302 5.1667C8.62745 4.84776 9.81241 4.87437 10.9114 5.24301C12.0104 5.61166 12.9717 6.30499 13.6684 7.23145C13.7176 7.29433 13.7793 7.34642 13.8495 7.38448C13.9198 7.42255 13.9971 7.44579 14.0767 7.45275C14.1562 7.45972 14.2364 7.45026 14.3122 7.42496C14.388 7.39967 14.4578 7.35908 14.5172 7.30571C15.3622 6.50851 16.43 5.98758 17.5784 5.81225C18.7268 5.63691 19.9014 5.8155 20.9458 6.32423C21.9902 6.83296 22.8549 7.6477 23.4248 8.66003C23.9948 9.67235 24.2428 10.8342 24.1361 11.991C23.9282 14.3674 22.2164 16.0057 20.5236 17.426L14.3422 22.4408C14.1294 22.6459 13.8754 22.8035 13.5971 22.9029C13.3187 23.0023 13.0224 23.0414 12.7278 23.0175C12.4332 22.9936 12.147 22.9073 11.8883 22.7643C11.6296 22.6213 11.4043 22.4249 11.2274 22.1881L5.99579 16.155C4.57542 14.4623 3.17321 12.562 3.38202 10.1753Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
 
                                                     <span class="masters__particles"></span>
@@ -426,7 +433,8 @@
                                             </div>
                                             <img src="/src/img/masters/grafiti.png" alt="" class="masters__grafiti">
                                         </div>
-                                        <div class="swiper-slide">
+                                        <!-- <div class="swiper-slide"> -->
+                                        <div class="masters__slide" data-index="2">
                                             <div class="masters__card">
                                                 <img class="masters__foto" src="/src/img/masters/master2.jpg" alt="master2">
                                             </div>
@@ -442,8 +450,8 @@
                                                 <span class="masters__book-title">Book an appointment with Alex Smith</span>
                                                 <!-- <img src="/src/img/masters/vector1.png" alt="" class="masters__heart"> -->
                                                  <button class="masters__heart" type="button" aria-label="Like">
-                                                    <svg viewBox="0 0 24 24">
-                                                        <path d="M20.8 4.6c-1.5-1.5-4-1.5-5.5 0L12 7.9 8.7 4.6a3.9 3.9 0 0 0-5.5 5.5L12 19l8.8-8.9a3.9 3.9 0 0 0 0-5.5z"/>
+                                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.38202 10.1753C3.48307 9.02055 3.93202 7.92361 4.66957 7.02936C5.40713 6.13512 6.3986 5.48564 7.51302 5.1667C8.62745 4.84776 9.81241 4.87437 10.9114 5.24301C12.0104 5.61166 12.9717 6.30499 13.6684 7.23145C13.7176 7.29433 13.7793 7.34642 13.8495 7.38448C13.9198 7.42255 13.9971 7.44579 14.0767 7.45275C14.1562 7.45972 14.2364 7.45026 14.3122 7.42496C14.388 7.39967 14.4578 7.35908 14.5172 7.30571C15.3622 6.50851 16.43 5.98758 17.5784 5.81225C18.7268 5.63691 19.9014 5.8155 20.9458 6.32423C21.9902 6.83296 22.8549 7.6477 23.4248 8.66003C23.9948 9.67235 24.2428 10.8342 24.1361 11.991C23.9282 14.3674 22.2164 16.0057 20.5236 17.426L14.3422 22.4408C14.1294 22.6459 13.8754 22.8035 13.5971 22.9029C13.3187 23.0023 13.0224 23.0414 12.7278 23.0175C12.4332 22.9936 12.147 22.9073 11.8883 22.7643C11.6296 22.6213 11.4043 22.4249 11.2274 22.1881L5.99579 16.155C4.57542 14.4623 3.17321 12.562 3.38202 10.1753Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
                                                     <span class="masters__particles"></span>
                                                 </button>
@@ -451,8 +459,8 @@
                                             <img src="/src/img/masters/grafiti.png" alt="" class="masters__grafiti">
                                         </div>
                                     </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
+                                    <!-- <div class="swiper-pagination"></div> 
+                                </div>-->
                                 
                         </div>
                         <h2 class="title-h2-subtitle masters__infomaster">08 RESIDENT ARTISTS 12 YEARS EXPERIENCE 100% CUSTOM WORK<h2>
@@ -469,9 +477,18 @@
                 <p class="title-h2-subtitle masters__content-text">PROFILE / 04</p>
             </div>
    </section>
+   </div>
    <section class="forms">
     <div class="container">
-        
+             <div class="forms__wrapper">
+                <div class="forms__content-left">
+                        <div class="forms__titles">
+                            <!-- <img src="/src/img/about/stroke.png" alt="" class="about__stroke-img"> -->
+                            <h2 class="title-h2 forms__title">ABOUT THE STUDIO</h2>
+                            <h3 class="title-h3 forms__subtitle">BUILT ON CRAFT</h3>
+                        </div>
+                </div>
+            </div>
     </div>
    </section>
     <script type="module" src="/src/js/script.js"></script>
