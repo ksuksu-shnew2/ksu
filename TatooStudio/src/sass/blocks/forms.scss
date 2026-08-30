@@ -2,7 +2,10 @@
 
 .forms {
     position: relative;
-    min-height: 1080px;
+    height: 1080px;
+    isolation: isolate;
+    overflow: hidden;
+    // width: 1920px;
     //height: 1080px;
     &::before,
     &::after {
@@ -10,12 +13,13 @@
         position: absolute;
         top: 0;
         bottom: 0;
+        
         // width: 60%;
-        z-index: 0;
+        z-index: -1;
     }
     &::before {
         left: 0;
-
+       width: calc(100% - 936px);
          background: url('../../icons/effects/Frame_noise_wight.png') no-repeat,
             linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
         
@@ -28,8 +32,30 @@
     linear-gradient(105deg, #f6f4f2 -1.15%, #f3f2f3 39.83%, #eaedf2 89.91%), radial-gradient(35.71% 35.71% at 53.57% 53.57%, rgba(250, 242, 237, 0.3) 0%, rgba(245, 242, 242, 0.11) 60%, rgba(240, 240, 245, 0) 100%);
     }
 
+    &__img {
+        position: absolute;
+        left: -15px;
+        top: 15px;
+        z-index: 3;
+    }
+
+     &__grafiti {
+        position: absolute;
+        right: 225px;
+        top: 480px;
+        // bottom: 0px;
+        width: 612px;
+        height: 603px;
+        z-index: 3;
+        transform: rotate(39deg);
+        
+    }
+
     &__wrapper {
+            
             padding-top: 150px;
+            display: grid;
+            grid-template-columns: 1fr 402px;
             //padding-left: 18px;
         }
 
@@ -54,7 +80,186 @@
     }
 
     &__subtitle {
-        margin-top: 25px;
-    }
+        width: 646px;
+        margin-top: 20px;
+        span {
+            position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            
+
+            top: 0px;
+            left: -27px;
+            right: -98px;
+            width: 179px;
+            height: 69px;
+            transform: rotate(-8deg);
+
+            background: url("/src/img/forms/elips.png") center / 100% 100% no-repeat;
+             }
+        }
    
+    }
+    
+
+    &__content-right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+        min-width: 0;
+    }
+    &__title-right {
+        color: $White;
+    }
+
+    &__subtitle-right {
+        text-transform: lowercase;
+    }
+    &__form {
+        margin-top: 26px;
+        display: grid;
+        width: 100%;
+        // grid-template-columns: max-content 1fr;
+        // column-gap: 15px;
+        row-gap: 29px;
+    }
+
+     &__block {
+        // margin-top: 45px;
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        column-gap: 15px;
+        width: 100%;
+        min-width: 0;
+        // row-gap: 30px;
+    }
+
+    &__form-wrapper{
+        position: relative;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.65);
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+
+        transform: translateY(-50%);
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        color: $Red-Dark;
+
+        pointer-events: none;
+    }
+
+    &::before {
+        content: "(";
+        left: 0;
+    }
+
+    &::after {
+        content: ")";
+        right: 0;
+    }
+}
+    &__label {
+        
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        color: $White;
+        span {
+            text-transform: lowercase;
+        }
+    }
+
+   &__input {
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
+        height: 26px;
+        min-width: 0;
+		&::placeholder {
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 120%;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+		}
+	}
+
+    &__checkblocks {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__check-block {
+		display: flex;
+		align-items:start;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        color: $White;
+        span {
+            font-weight: 800;
+        }
+       
+	
+	}
+	&__checkbox {
+		margin-right: 15px;
+		width: 20px;
+		height: 20px;
+        border: 1px solid $White;
+        background: transparent;
+        appearance: none;
+        &:checked {
+        background: $White url("/src/img/forms/active.png") center / 12px no-repeat;
+         border-color: $Black;
+	    }
+    }
+
+    &__btn-text {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: $White;   
+            align-items: center;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        background: $White;
+
+        
+
+    }
+    &__btn-img {
+            display: block;
+            // width: 100%;
+            // height: 100%;
+            max-inline-size:none;
+        }
+    
 }
