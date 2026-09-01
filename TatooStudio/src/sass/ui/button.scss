@@ -9,6 +9,12 @@
 	color: $Black;
 	padding: 0;
     border: none;
+	transition: color 0.9s ease, background-color 0.9s ease;
+	&:hover {
+		color: $White;
+		background: $Black;
+		
+	}
 }
 
 .btn-works {
@@ -19,4 +25,11 @@
 	color: $White;
 	padding: 0;
     border: none;
+
+	transition: color 0.9s ease, background-color 0.9s ease;
+	&:hover {
+		background: $White;
+		color: $Black;
+		
+	}
 }

@@ -51,6 +51,14 @@
         text-align: end;
         color: $White;
         text-decoration: none;
+        &:hover {
+            color:$Red-Dark;
+        }
+    }
+
+    &__link svg {
+        display: block;
+        transition: color 0.3s ease;
     }
 
     &__logo{
@@ -71,7 +79,20 @@
         
     }
 
-     &__link-notactive {
-        color: rgba(255, 255, 255, 0.5);
+    &__link-lang {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        text-align: end;
+         color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+
+        &.is-active {
+        color: $White;
+        pointer-events: none;
+        cursor: default;
     }
+    }
+
 }

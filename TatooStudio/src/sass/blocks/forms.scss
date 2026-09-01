@@ -108,6 +108,8 @@
         flex-direction: column;
         row-gap: 14px;
         min-width: 0;
+        position: relative;
+        z-index: 4;
     }
     &__title-right {
         color: $White;
@@ -123,6 +125,7 @@
         // grid-template-columns: max-content 1fr;
         // column-gap: 15px;
         row-gap: 29px;
+
     }
 
      &__block {
@@ -183,6 +186,8 @@
 		background-color: transparent;
 		box-shadow: none;
 		border: none;
+        padding-inline: 20px;
+        color: $White;
         // height: 26px;
         min-width: 0;
 		&::placeholder {
@@ -251,9 +256,18 @@
         border-radius: 10px;
         width: 50px;
         height: 50px;
-        background: $White;
+        background-color: $White;
         border: none;
         padding: 0;
+        transition: background-color 0.9s ease;
+        &:hover {
+             background-color: $Black;
+            
+             .forms__btn-img {
+                    filter: invert(1);
+                }
+            
+        }
     
     }
     &__btn-img {
@@ -261,6 +275,7 @@
             // width: 100%;
             // height: 100%;
             max-inline-size:none;
+            transition: filter 0.9s ease;
         }
     
      &__content-text{

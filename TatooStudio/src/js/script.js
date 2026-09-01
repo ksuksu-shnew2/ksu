@@ -222,59 +222,18 @@ window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
 
-// const hearts = document.querySelectorAll(".masters__heart");
+const languageLinks = document.querySelectorAll(".header__link-lang");
 
-// hearts.forEach((heart) => {
-//     heart.addEventListener("click", () => {
-//         const isActive =
-//             heart.classList.toggle("masters__heart_active");
+languageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
 
-//         if (!isActive) return;
+        languageLinks.forEach((item) => {
+            item.classList.remove("is-active");
+            item.removeAttribute("aria-current");
+        });
 
-//         const particleCount = 24;
-
-//         for (let i = 0; i < particleCount; i++) {
-//             const particle =
-//                 document.createElement("span");
-
-//             particle.classList.add("masters__particle");
-
-//             const size =
-//                 2 + Math.random() * 5;
-
-//             particle.style.width = `${size}px`;
-//             particle.style.height = `${size}px`;
-
-//             const angle =
-//                 (Math.PI * 2 / particleCount) * i;
-
-//             // Было примерно 30–70
-//             // Теперь разлёт гораздо шире
-//             const distance =
-//                 70 + Math.random() * 90;
-
-//             const x =
-//                 Math.cos(angle) * distance;
-
-//             const y =
-//                 Math.sin(angle) * distance;
-
-//             particle.style.setProperty(
-//                 "--x",
-//                 `${x}px`
-//             );
-
-//             particle.style.setProperty(
-//                 "--y",
-//                 `${y}px`
-//             );
-
-//             heart.appendChild(particle);
-
-//             particle.addEventListener(
-//                 "animationend",
-//                 () => particle.remove()
-//             );
-//         }
-//     });
-// });
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "page");
+    });
+});
