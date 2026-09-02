@@ -357,44 +357,10 @@
         }
 
         &__content-text{
-        // position: absolute;
-        margin-top: -80px;
+        margin-top: -40px;
         text-align: end;
-        // bottom: 40px;   // фиксированный угол экрана
-        // left: 40px;    // или left, как в дизайне
-        // margin-top: 0;
         color: rgba(149, 149, 149, 0.6);
 
     }
 
-    // &__arrow {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     margin-top:-120px;
-    // }
-    // &__arrow--next {
-    //     display: block;
-        
-    //     margin-right: 10px;
-    //     padding: 9px 19px;
-    //     text-align: end;
-    //     border: 1px solid $White;
-    //     border-radius: 99px;
-    //     width: 87px;
-    //     height: 39px;
-    //     transform: rotate(-180deg);
-    //      background: transparent;
-    // }
-
-    // &__arrow--prev{
-    //     display: block;
-    //     padding: 9px 19px;
-    //     // margin-top:-90px;
-    //     margin-left: 10px;
-    //     border: 1px solid $White;
-    //     border-radius: 99px;
-    //     width: 87px;
-    //     height: 39px;
-    //      background: transparent;
-    // }
 }
