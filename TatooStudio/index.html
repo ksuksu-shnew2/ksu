@@ -11,9 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css"/>
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
   </head>
   <body>
-   <section class="hero">
+   <section class="hero page-section">
         <img src="/src/img/hero/hero.png" alt="hero" class="hero__hand-img">
         <header class="header">
                 <nav class="header__nav">
@@ -90,7 +93,7 @@
         </div>
      </div>
    </section>
-   <section class="works">
+   <section class="works page-section">
     <img src="/src/img/works/person.png" alt="person" class="works__person">
     <div class="container" >
         <div class="works__wrapper">
@@ -172,7 +175,7 @@
                 </div>       
             </div>
    </section>
-   <section class="about">
+   <section class="about page-section">
         <div class="container">
             <div class="about__wrapper">
                 <div class="about__content-left">
@@ -246,7 +249,7 @@
                 
         </div>
    </section>
-   <section class="aboutus">
+   <section class="aboutus page-section">
         <div class="container">
             <h2 class="title-h2 aboutus__title">WHAT DEFINES US</h2>
             <h3 class="title-h3 aboutus__subtitle">EXPERIENCE, ARTISTS, AND THE WAY WE WORK</h3>
@@ -275,13 +278,13 @@
             </div>
         </div>
    </section>
-   <section class="process">
+   <section class="process page-section">
         <h2 class="title-h2 process__title">WORK PROCESS</h2>
         <video class="process__video" autoplay muted loop playsinline>
             <source src="/src/video/process.mp4" type="video/mp4">
         </video>
    </section>
-   <section class="service">
+   <section class="service page-section">
     <div class="container">
         <h2 class="title-h2 service__title">SERVICE INDEX</h2>
         <div class="service__table">
@@ -472,10 +475,9 @@
                                         </div>
                                     </div>
                                     <!-- <div class="swiper-pagination"></div> 
-                                </div>-->
-                                
+                                </div>--> 
                         </div>
-                        <h2 class="title-h2-subtitle masters__infomaster">08 RESIDENT ARTISTS 12 YEARS EXPERIENCE 100% CUSTOM WORK<h2>
+                        <h2 class="title-h2-subtitle masters__infomaster">08 RESIDENT ARTISTS 12 YEARS EXPERIENCE 100% CUSTOM WORK</h2>
                     </div>
                 </div>
                 <!-- <div class="masters__arrow">
@@ -520,52 +522,52 @@
                                 </div>
                             </div>
                             <div class="forms__block">
-                                <label class="forms__label" for="name">M<span>y EMAIL /</span></label>
+                                <label class="forms__label" for="email">M<span>y EMAIL /</span></label>
                                 <div class="forms__form-wrapper">
                                     <input
                                         class="forms__input"
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        id="email"
+                                        name="email"
                                         placeholder="E-MAIL"
                                         required
                                         />
                                 </div>
                             </div>
                             <div class="forms__block">
-                                <label class="forms__label" for="name">M<span>y TELEGRAM /</span></label>
+                                <label class="forms__label" for="username">M<span>y TELEGRAM /</span></label>
                                 <div class="forms__form-wrapper">
                                     <input
                                         class="forms__input"
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        id="username"
+                                        name="username"
                                         placeholder="USERNAME"
                                         required
                                         />
                                 </div>
                             </div>
                             <div class="forms__block">
-                                <label class="forms__label" for="name">M<span>y idea /</span></label>
+                                <label class="forms__label" for="describe">M<span>y idea /</span></label>
                                 <div class="forms__form-wrapper">
                                     <input
                                         class="forms__input"
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        id="describe"
+                                        name="describe"
                                         placeholder="DESCRIBE"
                                         required
                                         />
                                 </div>
                             </div>
                             <div class="forms__block">
-                                <label class="forms__label" for="name">M<span>y SIZE /</span></label>
+                                <label class="forms__label" for="size">M<span>y SIZE /</span></label>
                                 <div class="forms__form-wrapper">
                                     <input
                                         class="forms__input"
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        id="size"
+                                        name="size"
                                         placeholder="CM"
                                         required
                                         />
@@ -573,26 +575,30 @@
                             </div>
                             <div class="forms__checkblocks">
                                 <div class="forms__block">
-                                    <label class="forms__check-block" for="checkbox">
-                                        <input
-                                            required
-                                            class="forms__checkbox"
-                                            type="checkbox"
-                                            id="checkbox"/>
-                                        <div>i agree to the <span>processing of personal </span><br><span>data</span>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="forms__block">      
-                                    <label class="forms__check-block" for="checkbox">
-                                        <input
-                                            required
-                                            class="forms__checkbox"
-                                            type="checkbox"
-                                            id="checkbox"/>
-                                        i agree with the <span>privacy policy</span></label>
-                                        <div class="checkbox-error-message">    
+                                    <div class="forms__check-wrapper">
+                                        <label class="forms__check-block" for="checkbox">
+                                            <input
+                                                required
+                                                class="forms__checkbox"
+                                                type="checkbox"
+                                                id="checkbox"/>
+                                            <div>i agree to the <span>processing of personal </span><br><span>data</span>
+                                            </div>
+                                        </label>
+                                        <div class="checkbox-error-message"></div>
                                     </div>
+                                </div>
+                                <div class="forms__block">  
+                                        <div class="forms__check-wrapper">  
+                                            <label class="forms__check-block" for="checkbox-policy">
+                                                <input
+                                                    required
+                                                    class="forms__checkbox"
+                                                    type="checkbox"
+                                                    id="checkbox-policy"/>
+                                                i agree with the <span>privacy policy</span></label>
+                                            <div class="checkbox-error-message"></div>    
+                                        </div> 
                                 </div>
                             </div>
                             <div class="forms__btn-text">

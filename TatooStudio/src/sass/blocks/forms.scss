@@ -1,6 +1,17 @@
 @use "/src/sass/base/variables.scss" as *;
 
+// .page-section {
+//     position: sticky;
+//     top: 0;
+//     min-height: 100vh;
+// }
 .forms {
+    //   position: relative; // было relative
+    // top: 0;
+    //  z-index: auto;
+    margin-top: -100vh;
+
+    
     position: relative;
     height: 1080px;
     isolation: isolate;
@@ -76,8 +87,8 @@
             right: -98px;
             background: url("/src/img/forms/stroke.png") center / 100% 100% no-repeat;
 
-    }
-    }
+        }
+        }
 
     &__subtitle {
         width: 646px;
@@ -140,7 +151,7 @@
 
     &__form-wrapper{
         position: relative;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.65);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 
     &::before,
     &::after {
@@ -155,7 +166,8 @@
         line-height: 120%;
         letter-spacing: -0.03em;
         text-transform: uppercase;
-        color: $Red-Dark;
+        color: rgba(255, 255, 255, 0.5);
+        // color: $Red-Dark;
 
         pointer-events: none;
     }
@@ -170,6 +182,24 @@
         right: 0;
     }
 }
+    &__form-wrapper .just-validate-error-label {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+}
+    .just-validate-error-label {
+    color: $Red-Dark !important;
+   
+}
+    &__form-wrapper:has(.just-validate-error-field) {
+        border-bottom: 2px solid $Red-Dark;
+        &::before,
+        &::after {
+        color: $Red-Dark;
+    }
+        
+}
+
     &__label {
         
         font-weight: 500;
@@ -188,6 +218,11 @@
 		border: none;
         padding-inline: 20px;
         color: $White;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
         // height: 26px;
         min-width: 0;
 		&::placeholder {
@@ -207,7 +242,18 @@
         gap: 25px;
     }
 
+    &__check-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkbox-error-message {
+        margin-top: 5px;
+        margin-left: 35px;
+    }
+
     &__check-block {
+        position: relative;
 		display: flex;
 		align-items:start;
         font-weight: 400;
@@ -218,19 +264,33 @@
         span {
             font-weight: 800;
         }
-       
-	
+        &::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 2px;
+        width: 23px;
+        height: 24px;
+        background: url("/src/img/forms/active.png") center / contain no-repeat;
+        opacity: 0;
+        pointer-events: none;
+    }
+        &:has(.forms__checkbox:checked)::after {
+            opacity: 1;
+        }
+
 	}
 	&__checkbox {
-		margin-right: 15px;
+		margin-right: 14px;
 		width: 20px;
 		height: 20px;
         border: 1px solid $White;
         background: transparent;
         appearance: none;
         &:checked {
-        background: $White url("/src/img/forms/active.png") center / 12px no-repeat;
-         border-color: $Black;
+        //background: $White url("/src/img/forms/active.png") center / 12px no-repeat;
+         border-color: $White;
+         background-color: $White;
 	    }
     }
 
@@ -259,7 +319,7 @@
         background-color: $White;
         border: none;
         padding: 0;
-        transition: background-color 0.9s ease;
+        transition: background-color 2s ease;
         &:hover {
              background-color: $Black;
             
@@ -275,7 +335,7 @@
             // width: 100%;
             // height: 100%;
             max-inline-size:none;
-            transition: filter 0.9s ease;
+            transition: filter 2s ease;
         }
     
      &__content-text{

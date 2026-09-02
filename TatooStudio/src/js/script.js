@@ -34,11 +34,7 @@ const images = [
     photo3,
     photo4,
     photo5
-    // "/src/img/service/girl.jpg",
-    // "/src/img/service/2.png",
-    // "/src/img/service/3.png",
-    // "/src/img/service/4.png",
-    // "/src/img/service/5.png"
+   
 ];
 
 let currentImage = "";
@@ -90,29 +86,23 @@ table.addEventListener("mouseleave", () => {
     });
 });
 
-//  var swiper = new Swiper(".mySwiper", {
-//     direction: "vertical",
-//     slidesPerView: 1.001,
-//     spaceBetween: 40,
-//     speed: 700,
-//     loop: false,
-
-//     mousewheel: {
-//         enabled: true,
-//         forceToAxis: true,
-//         releaseOnEdges: true,
-//         thresholdDelta: 20,
-//         thresholdTime: 500,
-//         sensitivity: 1,
-//     },
-
-//     // navigation: {
-//     //     nextEl: ".masters__arrow--next",
-//     //     prevEl: ".masters__arrow--prev",
-//     // },
-// });
 
 gsap.registerPlugin(ScrollTrigger);
+
+const lenis = new Lenis({
+    lerp: 0.065,
+    smoothWheel: true,
+    wheelMultiplier: 0.55,
+    anchors: true,
+});
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 
 function initMastersSlider() {
     const section = document.querySelector(".masters");
@@ -143,37 +133,38 @@ function initMastersSlider() {
     }
 
 
-    gsap.to(track, {
-        y: () => -getScrollDistance(),
+   
+const scrollDistance = getScrollDistance();
+const overlapDistance = window.innerHeight;
 
-        ease: "none",
+const timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: section,
+        start: "top top",
 
-        scrollTrigger: {
-            trigger: section,
+        end: () =>
+            `+=${getScrollDistance() + window.innerHeight}`,
 
-            start: "top top",
+        // scrub: 1,
+        scrub: true,
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+    },
+});
 
-            // Длина прокрутки равна длине ленты
-            end: () => {
-                return `+=${Math.max(
-                    1,
-                    getScrollDistance()
-                )}`;
-            },
+// Сначала прокручиваются все карточки
+timeline.to(track, {
+    y: () => -getScrollDistance(),
+    ease: "none",
+    duration: scrollDistance,
+});
 
-            scrub: 1,
-
-            pin: true,
-
-            pinSpacing: true,
-
-            anticipatePin: 1,
-
-            invalidateOnRefresh: true,
-
-            // markers: true
-        }
-    });
+// Потом карточки стоят, а форма наезжает
+timeline.to({}, {
+    duration: overlapDistance,
+});
 }
 
 
@@ -218,6 +209,37 @@ function initHearts() {
 initMastersSlider();
 initHearts();
 
+function initBookEffect() {
+    const pages = gsap.utils.toArray(
+        ".works, .about, .aboutus, .process, .service, .masters, .forms"
+    );
+
+    pages.forEach((page) => {
+        gsap.fromTo(
+            page,
+            {
+               
+                boxShadow: "0 -30px 70px rgba(0, 0, 0, 0.35)",
+            },
+            {
+                
+                boxShadow: "0 -5px 20px rgba(0, 0, 0, 0)",
+                ease: "none",
+
+                scrollTrigger: {
+                    trigger: page,
+                    start: "top bottom",
+                    end: "top top",
+                    scrub: true,
+                    // scrub: 1.8,
+                },
+            }
+        );
+    });
+}
+
+initBookEffect();
+
 window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
@@ -237,3 +259,103 @@ languageLinks.forEach((link) => {
         link.setAttribute("aria-current", "page");
     });
 });
+
+try {
+	const validator = new JustValidate('.forms__form');
+	validator
+	.addField('#name', [
+    {
+      rule: 'required',
+	  errorMessage: "",
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+	//   errorMessage: "Minimum 2 chars!",
+    },
+  ],
+{
+        errorLabelStyle: {
+            display: 'none',
+        },
+    })
+  .addField('#email', [
+    {
+      rule: 'required',
+    },
+    {
+      rule: 'email',
+    },
+  ],{
+        errorLabelStyle: {
+            display: 'none',
+        },
+    })
+  .addField('#username', [
+    {
+      rule: 'required',
+	//   errorMessage: "Please fill the username",
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+	//   errorMessage: "Minimum 2 chars!",
+    },
+  ],{
+        errorLabelStyle: {
+            display: 'none',
+        },
+    })
+  .addField('#describe', [
+    {
+      rule: 'required',
+	//   errorMessage: "Please fill the describe",
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+	//   errorMessage: "Minimum 2 chars!",
+    },
+  ],{
+        errorLabelStyle: {
+            display: 'none',
+        },
+    })
+   .addField('#size', [
+    {
+      rule: 'required',
+	//   errorMessage: "Please fill the size",
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+	//   errorMessage: "Minimum 1 chars!",
+    },
+  ],{
+        errorLabelStyle: {
+            display: 'none',
+        },
+    })
+    .addField(
+    '#checkbox',
+    [
+        {
+            rule: 'required',
+            errorMessage: 'Please confirm your consent',
+        },
+    ])
+     .addField(
+    '#checkbox-policy',
+    [
+        {
+            rule: 'required',
+            errorMessage: 'Please confirm your consent',
+        },
+    ],
+    // {
+    //     errorsContainer: document.querySelector('.checkbox-error-message'),
+    // }
+    )
+
+    
+}catch (e) {}
