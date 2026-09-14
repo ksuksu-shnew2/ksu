@@ -250,12 +250,17 @@
         padding: 14px 15px;
         border: 0.50px solid $White;
         border-radius: 100px;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 120%;
-        letter-spacing: -0.02em;
+      
         // text-align: center;
         color: $White;
+         
+        p {
+            //width: 100%;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+        }
     }
 
         // &__heart {
@@ -353,7 +358,7 @@
             // width: 477px;
             // height: auto;
             box-shadow: 0 17px 4px 0 rgba(0, 0, 0, 0.1);
-            opacity: 0.7;
+            opacity: 0.9;
         }
 
         &__content-text{

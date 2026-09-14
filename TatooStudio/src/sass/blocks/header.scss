@@ -47,19 +47,53 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 120%;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.03em;
         text-align: end;
         color: $White;
         text-decoration: none;
-        &:hover {
-            color:$Red-Dark;
-        }
     }
 
-    &__link svg {
-        display: block;
-        transition: color 2s ease;
+    &__link-media {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-color: $White;
+
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    transition: background-color 0.4s ease;
+
+    &:hover {
+        background-color: #681819;
     }
+
+    &--facebook {
+        mask-image: url("/src/icons/facebook.png");
+        -webkit-mask-image: url("/src/icons/facebook.png");
+    }
+
+    &--instagram {
+        mask-image: url("/src/icons/instagram.png");
+        -webkit-mask-image: url("/src/icons/instagram.png");
+    }
+
+    &--tg {
+        mask-image: url("/src/icons/tg.png");
+        -webkit-mask-image: url("/src/icons/tg.png");
+    }
+}
+
+    // &__link svg {
+    //     display: block;
+    //     transition: color 2s ease;
+    // }
 
     &__logo{
         // position: absolute;

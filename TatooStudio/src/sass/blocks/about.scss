@@ -15,12 +15,16 @@
 
     &__wrapper {
             padding-top: 150px;
-            display: grid;
-            grid-template-columns: 622px 1fr 402px;
+            
             //padding-left: 18px;
         }
+    &__content-all {
+        display: grid;
+        grid-template-columns: 622px 1fr 402px;
+    }
     
      &__title {
+        margin-top: 17px;
          position: relative;
          z-index: 1;
          padding-top: 10px;
@@ -54,7 +58,7 @@
         display: grid;
         position: relative;
         grid-template-columns: repeat(2, 244px);
-        height: 40px;
+        height: 41px;
         justify-self: start;
         border-bottom: 1px solid rgba(0, 0, 0, 0.3);
         //  border-bottom: 1px solid $Black;
@@ -74,13 +78,13 @@
 
     &__grid-text > :nth-child(odd) {
         justify-self: start;
-            margin-top: 10px;
+            margin-top: 11px;
                 // align-self: center;
             }
 
     &__grid-text  > :nth-child(even) {
             justify-self: end;
-            margin-top: 10px;
+            margin-top: 11px;
             // align-self: center;
         }
 
@@ -121,6 +125,7 @@
     }
 
     &__collge-picture {
+        margin-top: 12px;
         position: relative;
         width: 667px;
         height: 752px;

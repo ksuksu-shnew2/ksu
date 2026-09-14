@@ -5,11 +5,15 @@
 //     top: 0;
 //     min-height: 100vh;
 // }
+.page-margin {
+    margin-top: -100vh;
+}
+
 .forms {
     //   position: relative; // было relative
     // top: 0;
     //  z-index: auto;
-    margin-top: -100vh;
+    // margin-top: -100vh;
 
     
     position: relative;
