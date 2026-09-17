@@ -109,5 +109,8 @@
         // letter-spacing: -0.02em;
         text-align: right;
         color: $Black;
+        &:hover {
+		color: $White;
+		}
     }
 }

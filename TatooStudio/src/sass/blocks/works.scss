@@ -140,5 +140,8 @@
         // letter-spacing: -0.02em;
         text-align: right;
         color: $White;
+        &:hover {
+		color: $Black;
+	    }
     }
 }   
